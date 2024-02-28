@@ -8,17 +8,16 @@ function NavBar() {
     navbarComponent = (
       <div className="w-full  bg-cyan-50 text-gray-700 flex justify-center py-4">
         <div className="container flex justify-between text-lg">
-          <button
+          <Link to="/home"
            
             className="text-2xl font-bold uppercase text-cyan-900"
-          >
-            Farma Essencial{" "}
-          </button>
+          >Farma Essencial{" "}
+          </Link>
 
           <div className="flex gap-4">
-            <button className=" text-cyan-900 hover:underline  ">
+            <Link to="/produto" className=" text-cyan-900 hover:underline  ">
               Produtos
-            </button>
+            </Link>
 
             <Link to='/categoria' className="text-cyan-900 hover:underline ">
               Categorias

@@ -7,6 +7,8 @@ import ListaProduto from './componentes/produto/ListaProduto'
 import ListaCategoria from './componentes/categoria/ListaCategoria'
 import FormularioCategoria from './componentes/categoria/FormularioCategoria'
 import DeletarCategoria from './componentes/categoria/DeletarCategoria'
+import DeletarProduto from './componentes/produto/DeletarProduto'
+import FormularioProduto from './componentes/produto/FormularioProduto'
 
 function App() {
   
@@ -24,6 +26,20 @@ function App() {
               <Route path="/editarCategoria/:id" element={<FormularioCategoria />} />
               <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
               <Route path="/produto" element={<ListaProduto />} />
+
+              <Route
+                path="/cadastroProduto"
+                element={<FormularioProduto />}
+              />
+              <Route
+                path="/editarProduto/:id"
+                element={<FormularioProduto />}
+              />
+              <Route
+                path="/deletarProduto/:id"
+                element={<DeletarProduto />}
+              />
+
 
             </Routes>
           </div>
