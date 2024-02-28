@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 
 function NavBar() {
 
@@ -12,7 +12,7 @@ function NavBar() {
            
             className="text-2xl font-bold uppercase text-cyan-900"
           >
-            Farmacia{" "}
+            Farma Essencial{" "}
           </button>
 
           <div className="flex gap-4">
@@ -20,12 +20,13 @@ function NavBar() {
               Produtos
             </button>
 
-            <button className="text-cyan-900 hover:underline ">
+            <Link to='/categoria' className="text-cyan-900 hover:underline ">
               Categorias
-            </button>
-            <button className="text-cyan-900 hover:underline">
+            </Link>
+            
+            <Link to='cadastroCategoria' className="text-cyan-900 hover:underline">
               Cadastrar categoria
-            </button>
+            </Link>
         
           </div>
         </div>
