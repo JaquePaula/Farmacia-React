@@ -1,6 +1,7 @@
 
 import Categoria from "../../models/Categoria";
 import { buscar } from "../../services/Services";
+import { toastAlerta } from "../../util/toastAlerta";
 import CardCategoria from "./CardCategoria";
 import { useEffect, useState } from "react";
 import { Dna } from "react-loader-spinner";
@@ -13,7 +14,7 @@ function ListaCategoria() {
     try{
         await buscar('/categoria', setCategoria);
     } catch{
-        alert('Ocorreu um erro ao buscar as categorias.');
+        toastAlerta('Ocorreu um erro ao buscar as categorias.', 'erro');
     }
 }
    useEffect(() => {

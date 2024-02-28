@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Categoria from "../../models/Categoria";
 import { atualizar, buscar, cadastrar } from "../../services/Services";
 import { ChangeEvent, useEffect, useState } from "react";
+import { toastAlerta } from "../../util/toastAlerta";
 
 function FormularioCategoria() {
 
@@ -38,23 +39,23 @@ function FormularioCategoria() {
       try {
         await atualizar(`/categoria`, categoria, setCategoria)
 
-        alert('Categoria atualizada com sucesso')
+        toastAlerta('Categoria atualizada com sucesso', 'sucesso')
         retornar()
 
       } catch (error: any) {
  
-          alert('Erro ao atualizar a Categoria')
+          toastAlerta('Erro ao atualizar a Categoria','erro')
       }
 
     } else {
       try {
         await cadastrar(`/categoria`, categoria, setCategoria)
 
-        alert('categoria cadastrada com sucesso')
+        toastAlerta('categoria cadastrada com sucesso', 'sucesso')
 
       } catch (error: any) {
         
-          alert('Erro ao cadastrar a Categoria')
+          toastAlerta('Erro ao cadastrar a Categoria',"erro")
         
       }
     }
