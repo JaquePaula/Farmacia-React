@@ -14,7 +14,7 @@ function Footer() {
         <div className="flex justify-center bg-emerald-100 text-gray-800">
           <div className="container flex flex-col items-center py-4">
             <p className="text-xl font-bold">
-              Farmacia - Jaqueline | Copyright: {data}{" "}
+            Farma Essencial - Jaqueline | Copyright: {data}{" "}
             </p>
             <p className="text-lg">Acesse minhas redes sociais</p>
             <div className="flex gap-2">
