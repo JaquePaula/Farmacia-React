@@ -15,7 +15,7 @@ function CardProduto({ post }: CardProdutoProps) {
           
           <p>{post.descricao}</p>
           <p>R$ {post.preco}</p>
-          <p>categoria: {post.categoria?.descricao}</p>
+          <p>categoria: {post.categoria?.nome}</p>
           <p>
             Data:{" "}
             {new Intl.DateTimeFormat(undefined, {

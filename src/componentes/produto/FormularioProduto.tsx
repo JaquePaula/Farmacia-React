@@ -3,6 +3,7 @@ import Categoria from "../../models/Categoria";
 import { ChangeEvent, useEffect, useState } from "react";
 import Produto from "../../models/Produto";
 import { atualizar, buscar, cadastrar } from "../../services/Services";
+import { toastAlerta } from "../../util/toastAlerta";
 
 function FormularioProduto() {
   const navigate = useNavigate();
@@ -70,25 +71,25 @@ function FormularioProduto() {
     if (id != undefined) {
       try {
         await atualizar(`/produto`, produto, setProduto);
-        alert("Produto atualizado com sucesso");
+        toastAlerta("Produto atualizado com sucesso", "sucesso");
         return navigate("/produto");
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (error: any) {
         if (error.toString().includes("403")) {
-          alert("Erro ao atualizar o produto");
+          toastAlerta("Erro ao atualizar o produto", "erro");
         } else {
-          alert("Erro ao atualizar a Produto");
+          toastAlerta("Erro ao atualizar a Produto", "erro");
         }
       }
     }
     try {
       await cadastrar(`/produto`, produto, setProduto);
 
-      alert("Produto cadastrado com sucesso");
+      toastAlerta("Produto cadastrado com sucesso", "sucesso");
       return navigate("/produto");
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
-      alert("Erro ao cadastrar o Produto");
+      toastAlerta("Erro ao cadastrar o Produto", "erro");
     }
   }
 
@@ -163,7 +164,7 @@ function FormularioProduto() {
         <button
           disabled={carregandoCategoria}
           type="submit"
-          className="rounded disabled:bg-slate-200 bg-amber-500 hover:bg-amber-600 text-gray font-bold w-1/2 mx-auto block py-2"
+          className="rounded disabled:bg-slate-200 bg-cyan-200 hover:bg-cyan-300 text-gray font-bold w-1/2 mx-auto block py-2"
         >
           {carregandoCategoria ? (
             <span>Carregando</span>

@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import './App.css'
+import "react-toastify/dist/ReactToastify.css";
 import Footer from './componentes/Footer'
 import NavBar from './componentes/NavBar'
 import Home from './paginas/Home'
@@ -9,12 +9,14 @@ import FormularioCategoria from './componentes/categoria/FormularioCategoria'
 import DeletarCategoria from './componentes/categoria/DeletarCategoria'
 import DeletarProduto from './componentes/produto/DeletarProduto'
 import FormularioProduto from './componentes/produto/FormularioProduto'
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   
 
   return (
     <>
+      <ToastContainer />
       <BrowserRouter>
         <NavBar />
           <div className='min-h-[80vh]'>

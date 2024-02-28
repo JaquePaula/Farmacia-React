@@ -2,11 +2,14 @@ import { useNavigate, useParams } from "react-router-dom";
 import { buscar, deletar } from "../../services/Services";
 import { useEffect, useState } from "react";
 import Produto from "../../models/Produto";
+import { toastAlerta } from "../../util/toastAlerta";
 
 function DeletarProduto() {
   const [produto, setProduto] = useState<Produto>({} as Produto);
 
   const navigate = useNavigate();
+
+  const date = new Date(produto.data)
 
   const { id } = useParams<{ id: string }>();
 
@@ -28,9 +31,9 @@ function DeletarProduto() {
     try {
       await deletar(`/produto/${id}`);
 
-      alert("Produto apagado com sucesso");
+      toastAlerta("Produto apagado com sucesso", "sucesso");
     } catch (error) {
-      alert("Erro ao apagar a Produto");
+      toastAlerta("Erro ao apagar a Produto", "erro");
     }
 
     return retornar();
@@ -49,8 +52,14 @@ function DeletarProduto() {
         </header>
         <div className="p-4">
           <p className="text-xl h-full">{produto.descricao}</p>
-          <p>{produto.preco}</p>
-          <p>{produto.data}</p>
+          <p>R$ {produto.preco}</p>
+          <p>{date.toLocaleDateString("pt-BR")}
+
+          
+
+          </p>
+
+
         </div>
         <div className="flex">
           <button

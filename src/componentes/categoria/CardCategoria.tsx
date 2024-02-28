@@ -10,11 +10,11 @@ function CardCategoria({ categoria }: CardCategoriaProps) {
 
   return (
     <div className="border flex flex-col rounded-2xl overflow-hidden justify-between">
-      <header className="py-2 px-6 bg-green-200 text-gray-800 font-bold text-2xl">
+      <header className="py-2 px-6 bg-green-200 text-gray-800 text-2xl">
         {categoria.nome}
       </header>
       <p className="p-8 text-2xl bg-slate-50 h-full">{categoria.descricao}</p>
-
+      
       <p className="p-8 text-2xl bg-slate-50 h-full text-center">
         {date.toLocaleDateString("pt-BR")}
       </p>
